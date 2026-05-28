@@ -5,19 +5,38 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const LINKS = [
-  { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "#work", label: "Work", sectionId: "work" },
+  { href: "#about", label: "About", sectionId: "about" },
+  { href: "#contact", label: "Contact", sectionId: "contact" },
   { href: "/resume.pdf", label: "Resume", external: true },
 ];
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const sectionIds = LINKS.map((l) => l.sectionId).filter(Boolean) as string[];
+    const observers: IntersectionObserver[] = [];
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
+        { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
   }, []);
 
   return (
@@ -31,13 +50,13 @@ export default function Nav() {
         "px-8 lg:px-16 h-14",
         "transition-colors duration-300",
         scrolled
-          ? "bg-canvas/90 backdrop-blur-sm border-b border-edge"
+          ? "bg-canvas/90 backdrop-blur-sm border-b border-signal/20"
           : "bg-transparent border-b border-transparent",
       ].join(" ")}
     >
       <Link
         href="/"
-        className="font-mono text-xs tracking-[0.2em] text-ink-muted hover:text-ink transition-colors"
+        className="font-mono text-xs tracking-[0.2em] text-signal-dim hover:text-signal transition-colors"
         aria-label="Ryan Simpson — home"
       >
         RS
@@ -45,13 +64,18 @@ export default function Nav() {
 
       <nav aria-label="Primary navigation">
         <ul className="flex items-center gap-6 lg:gap-8 list-none">
-          {LINKS.map(({ href, label, external }) => (
+          {LINKS.map(({ href, label, external, sectionId }) => (
             <li key={href} className={external ? "hidden sm:list-item" : ""}>
               <a
                 href={href}
                 target={external ? "_blank" : undefined}
                 rel={external ? "noopener noreferrer" : undefined}
-                className="text-sm text-ink-muted hover:text-ink transition-colors"
+                className={[
+                  "text-sm transition-colors",
+                  activeSection === sectionId
+                    ? "text-ink"
+                    : "text-ink-muted hover:text-ink",
+                ].join(" ")}
               >
                 {label}
               </a>

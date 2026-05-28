@@ -10,6 +10,7 @@ export interface Project {
   stack: string[];
   highlights: string[];
   github: string;
+  metric: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -22,7 +23,7 @@ export const PROJECTS: Project[] = [
       "Multi-sensor SLAM pipeline for an autonomous ground vehicle — fusing LiDAR, stereo cameras, and IMU through RTAB-Map on Jetson AGX Orin.",
     description:
       "Multi-sensor SLAM pipeline for an autonomous ground vehicle — fusing VLP-16 LiDAR, three ZED X stereo cameras, RealSense D455, and IMU through RTAB-Map on Jetson AGX Orin.",
-    year: "2025 — present",
+    year: "2025 – present",
     role: "Research Assistant, Autonomous Vehicle Laboratory",
     stack: [
       "Python",
@@ -42,6 +43,7 @@ export const PROJECTS: Project[] = [
       "Resolved 13 major integration issues across realsense-ros 3.x → 4.x API migration, IMU topic remapping, and GPU parameter serialization conflicts",
     ],
     github: "https://github.com/changwemusonda/avl_slam",
+    metric: "4 sensors · RTAB-Map · Jetson AGX Orin",
   },
   {
     slug: "velodyne-vlp16-decoder",
@@ -52,7 +54,7 @@ export const PROJECTS: Project[] = [
       "Real-time UDP packet decoder reconstructing 3D point clouds at 300,000+ points per second — the perception foundation for the AVL autonomous go-kart.",
     description:
       "Real-time UDP packet decoder reconstructing 3D point clouds at 300,000+ points per second with Open3D visualization. Initial perception stage for the AVL autonomous go-kart.",
-    year: "2025 — present",
+    year: "2025 – present",
     role: "Research Assistant, Autonomous Vehicle Laboratory",
     stack: ["Python", "velodyne_decoder", "Open3D", "NumPy", "ROS 2"],
     highlights: [
@@ -63,6 +65,7 @@ export const PROJECTS: Project[] = [
       "Feeds downstream into occupancy grid mapping, RTAB-Map SLAM, and path planning on the AVL-002 platform",
     ],
     github: "https://github.com/Ryan-Simpson/velodyne-vlp16-decoder",
+    metric: "300,000+ pts/sec · 15 FPS · ROS 2",
   },
   {
     slug: "lewitt-lidar",
@@ -84,6 +87,7 @@ export const PROJECTS: Project[] = [
       "Central argument: both Conceptual Art and autonomous perception share a core principle: a rule system that interprets and reconstructs the world",
     ],
     github: "https://github.com/Ryan-Simpson/lewitt-lidar",
+    metric: "4 modes · real-time · Velodyne VLP-16",
   },
 ];
 

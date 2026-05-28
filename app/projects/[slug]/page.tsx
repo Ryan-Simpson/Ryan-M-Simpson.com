@@ -133,7 +133,7 @@ export default async function ProjectPage({
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 text-sm text-ink-muted hover:text-ink transition-colors duration-200 group"
           >
-            <span className="font-mono text-[9px] tracking-[0.2em] text-signal-dim uppercase group-hover:text-signal transition-colors duration-200">
+            <span className="font-mono text-[10px] tracking-[0.2em] text-signal-dim uppercase group-hover:text-signal transition-colors duration-200">
               GitHub
             </span>
             <span className="w-px h-3 bg-edge" aria-hidden="true" />

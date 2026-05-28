@@ -20,7 +20,7 @@ export default async function Image({
     (
       <div
         style={{
-          background: "#0f1014",
+          background: "#f8f6f2",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -36,7 +36,7 @@ export default async function Image({
             style={{
               fontSize: 13,
               letterSpacing: "0.22em",
-              color: "#c8842e",
+              color: "#924c10",
               textTransform: "uppercase",
               fontFamily: "monospace",
             }}
@@ -51,7 +51,7 @@ export default async function Image({
             style={{
               fontSize: 13,
               letterSpacing: "0.22em",
-              color: "#c8842e",
+              color: "#924c10",
               textTransform: "uppercase",
               fontFamily: "monospace",
             }}
@@ -62,7 +62,7 @@ export default async function Image({
             style={{
               fontSize: 72,
               fontWeight: 700,
-              color: "#e8e8ec",
+              color: "#1a1210",
               letterSpacing: "-0.03em",
               lineHeight: 0.92,
             }}
@@ -73,7 +73,7 @@ export default async function Image({
             style={{
               fontSize: 20,
               fontWeight: 300,
-              color: "#6a6a7a",
+              color: "#7a6e60",
               lineHeight: 1.55,
               maxWidth: 760,
             }}
@@ -94,7 +94,7 @@ export default async function Image({
             style={{
               fontSize: 12,
               letterSpacing: "0.15em",
-              color: "#44444e",
+              color: "#7a6e60",
               fontFamily: "monospace",
             }}
           >
@@ -104,7 +104,7 @@ export default async function Image({
             style={{
               fontSize: 12,
               letterSpacing: "0.15em",
-              color: "#44444e",
+              color: "#7a6e60",
               fontFamily: "monospace",
             }}
           >

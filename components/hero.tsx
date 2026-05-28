@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
+
 function FadeUp({
   children,
   delay = 0,
@@ -28,10 +29,18 @@ function FadeUp({
 export default function Hero() {
   return (
     <section
-      className="relative min-h-svh flex flex-col justify-end pb-24 px-8 lg:px-16 overflow-hidden"
+      className="relative min-h-[80vh] flex flex-col justify-end pb-16 lg:pb-24 px-8 lg:px-16 overflow-hidden"
       aria-label="Introduction"
     >
       <DotGrid />
+      <div
+        className="absolute inset-0 pointer-events-none select-none"
+        aria-hidden="true"
+        style={{
+          background:
+            "radial-gradient(ellipse 90% 65% at 10% 100%, oklch(0.50 0.14 62 / 0.05) 0%, transparent 65%)",
+        }}
+      />
 
       <div className="relative z-10 max-w-4xl">
         <FadeUp delay={0.15}>
@@ -41,7 +50,7 @@ export default function Hero() {
         </FadeUp>
 
         <FadeUp delay={0.28}>
-          <h1 className="text-[clamp(3.5rem,9vw,7.5rem)] font-bold leading-[0.9] tracking-[-0.03em] text-ink mb-10">
+          <h1 className="text-[clamp(3.5rem,8vw,6.5rem)] font-bold leading-[0.92] tracking-[-0.03em] text-ink mb-10">
             Ryan
             <br />
             Simpson
@@ -49,10 +58,9 @@ export default function Hero() {
         </FadeUp>
 
         <FadeUp delay={0.42}>
-          <p className="text-base lg:text-lg font-light text-ink-muted max-w-[50ch] leading-[1.75] tracking-[0.01em]">
-            Building autonomy systems that reason about the physical world.
-            Focused on perception, SLAM, and sensor fusion for real robots in
-            unstructured environments.
+          <p className="text-base lg:text-xl font-light text-ink-muted max-w-[48ch] leading-[1.75] tracking-[0.01em]">
+            Research at the Autonomous Vehicle Laboratory, Cal Poly Pomona.
+            Perception, SLAM, and sensor fusion on AVL-002.
           </p>
         </FadeUp>
 
@@ -111,7 +119,7 @@ function DotGrid() {
       aria-hidden="true"
       style={{
         backgroundImage:
-          "radial-gradient(circle, oklch(0.92 0.005 240 / 0.08) 1px, transparent 1px)",
+          "radial-gradient(circle, oklch(0.55 0.008 85 / 0.75) 1px, transparent 1px)",
         backgroundSize: "48px 48px",
         backgroundPosition: "0 0",
       }}
