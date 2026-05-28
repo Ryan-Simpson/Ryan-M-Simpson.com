@@ -16,8 +16,19 @@ export async function generateMetadata({
   const project = getProject(slug);
   if (!project) return {};
   return {
-    title: `${project.title} — Ryan Simpson`,
+    title: project.title,
     description: project.tagline,
+    openGraph: {
+      type: "article",
+      title: project.title,
+      description: project.tagline,
+      url: `https://ryan-m-simpson.com/projects/${project.slug}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.tagline,
+    },
   };
 }
 

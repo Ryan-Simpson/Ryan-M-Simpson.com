@@ -16,14 +16,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ryan Simpson — Robotics Software Engineer",
+  metadataBase: new URL("https://ryan-m-simpson.com"),
+  title: {
+    default: "Ryan Simpson — Robotics Software Engineer",
+    template: "%s — Ryan Simpson",
+  },
   description:
-    "Robotics software engineer focused on autonomy, perception, SLAM, and sensor fusion.",
+    "Robotics software engineer focused on autonomy, perception, SLAM, and sensor fusion. Research Assistant at the Autonomous Vehicle Laboratory, Cal Poly Pomona.",
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://ryan-m-simpson.com",
+    siteName: "Ryan Simpson",
     title: "Ryan Simpson — Robotics Software Engineer",
     description:
-      "Building autonomy systems that reason about the physical world.",
-    type: "website",
+      "Robotics software engineer focused on autonomy, perception, SLAM, and sensor fusion. Research Assistant at the Autonomous Vehicle Laboratory, Cal Poly Pomona.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ryan Simpson — Robotics Software Engineer",
+    description:
+      "Robotics software engineer focused on autonomy, perception, SLAM, and sensor fusion.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
   },
 };
 
