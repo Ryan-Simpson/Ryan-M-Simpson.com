@@ -71,6 +71,15 @@ export default function Hero() {
             >
               Get in Touch
             </a>
+            <span className="w-10 h-px bg-edge" aria-hidden="true" />
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-ink-muted hover:text-ink transition-colors duration-200"
+            >
+              Resume
+            </a>
           </div>
         </FadeUp>
       </div>

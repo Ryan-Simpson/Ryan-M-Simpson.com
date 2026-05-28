@@ -8,6 +8,7 @@ const LINKS = [
   { href: "#work", label: "Work" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
+  { href: "/resume.pdf", label: "Resume", external: true },
 ];
 
 export default function Nav() {
@@ -44,10 +45,12 @@ export default function Nav() {
 
       <nav aria-label="Primary navigation">
         <ul className="flex items-center gap-8 list-none">
-          {LINKS.map(({ href, label }) => (
+          {LINKS.map(({ href, label, external }) => (
             <li key={href}>
               <a
                 href={href}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noopener noreferrer" : undefined}
                 className="text-sm text-ink-muted hover:text-ink transition-colors"
               >
                 {label}
