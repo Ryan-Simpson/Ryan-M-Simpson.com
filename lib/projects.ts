@@ -56,7 +56,7 @@ export const PROJECTS: Project[] = [
     role: "Research Assistant, Autonomous Vehicle Laboratory",
     stack: ["Python", "velodyne_decoder", "Open3D", "NumPy", "ROS 2"],
     highlights: [
-      "300,000+ points per second real-time processing at a stable 15 FPS — validated against VeloView ground truth",
+      "300,000+ points per second real-time processing at a stable 15 FPS, validated against VeloView ground truth",
       "Custom UDP packet decoder parsing raw sensor packets into structured 3D point clouds with height-based coloring",
       "Configurable range and angle filtering; supports live streaming, PCAP replay, and ROS bag playback",
       "Threaded capture/render architecture sustaining throughput across x86 and Jetson AGX Orin hardware",
@@ -72,7 +72,7 @@ export const PROJECTS: Project[] = [
     tagline:
       "Four generative visualization modes that transform live Velodyne point cloud data into art through rules borrowed from Sol LeWitt's Wall Drawings.",
     description:
-      "Four generative visualization modes that transform live Velodyne point cloud data into art through rules borrowed from Sol LeWitt's Wall Drawings — written for an art history final.",
+      "Four generative visualization modes that transform live Velodyne point cloud data into art through rules borrowed from Sol LeWitt's Wall Drawings, written for an art history final.",
     year: "2026",
     role: "Solo — TH 3010: Through Artists' Eyes, Cal Poly Pomona",
     stack: ["Python", "Open3D", "NumPy", "velodyne_decoder"],
@@ -81,7 +81,7 @@ export const PROJECTS: Project[] = [
       "Color Bands (Wall Drawing #821): 360° azimuth divided into 8 color sectors",
       "Line Direction (Wall Drawing #46): PCA-based surface direction analysis driving a four-color system",
       "Voxel Structure (Serial Project #1): cubic wireframe grid referencing LeWitt's modular sculptures",
-      "Central argument: both Conceptual Art and autonomous perception share a core principle — a rule system that interprets and reconstructs the world",
+      "Central argument: both Conceptual Art and autonomous perception share a core principle: a rule system that interprets and reconstructs the world",
     ],
     github: "https://github.com/Ryan-Simpson/lewitt-lidar",
   },

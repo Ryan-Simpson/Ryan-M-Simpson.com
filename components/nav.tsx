@@ -44,9 +44,9 @@ export default function Nav() {
       </Link>
 
       <nav aria-label="Primary navigation">
-        <ul className="flex items-center gap-8 list-none">
+        <ul className="flex items-center gap-6 lg:gap-8 list-none">
           {LINKS.map(({ href, label, external }) => (
-            <li key={href}>
+            <li key={href} className={external ? "hidden sm:list-item" : ""}>
               <a
                 href={href}
                 target={external ? "_blank" : undefined}

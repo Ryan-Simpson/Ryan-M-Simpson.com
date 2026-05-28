@@ -44,7 +44,6 @@ export default async function ProjectPage({
   return (
     <main className="min-h-screen pt-32 pb-40 px-8 lg:px-16">
       <div className="max-w-3xl">
-        {/* Back */}
         <Reveal>
           <Link
             href="/#work"
@@ -54,7 +53,6 @@ export default async function ProjectPage({
           </Link>
         </Reveal>
 
-        {/* Domain + index */}
         <Reveal delay={0.06}>
           <div className="flex items-baseline gap-4 mb-6">
             <p className="font-mono text-[11px] tracking-[0.2em] text-signal uppercase">
@@ -66,23 +64,20 @@ export default async function ProjectPage({
           </div>
         </Reveal>
 
-        {/* Title */}
         <Reveal delay={0.1}>
           <h1 className="text-4xl lg:text-6xl font-bold tracking-[-0.03em] text-ink leading-[0.95] mb-8">
             {project.title}
           </h1>
         </Reveal>
 
-        {/* Tagline */}
         <Reveal delay={0.16}>
           <p className="text-base lg:text-lg font-light text-ink-muted leading-[1.8] max-w-[58ch] mb-16">
             {project.tagline}
           </p>
         </Reveal>
 
-        {/* Metadata */}
         <Reveal delay={0.22}>
-          <div className="border-t border-edge pt-8 mb-0 grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div className="border-t border-edge pt-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
             <div>
               <p className="font-mono text-[10px] tracking-[0.2em] text-signal-dim uppercase mb-2">
                 Year
@@ -108,7 +103,6 @@ export default async function ProjectPage({
           </div>
         </Reveal>
 
-        {/* Highlights */}
         <Reveal delay={0.28}>
           <div className="border-t border-edge mt-8 pt-8 mb-16">
             <p className="font-mono text-[10px] tracking-[0.2em] text-signal-dim uppercase mb-8">
@@ -132,7 +126,6 @@ export default async function ProjectPage({
           </div>
         </Reveal>
 
-        {/* GitHub CTA */}
         <Reveal delay={0.34}>
           <a
             href={project.github}

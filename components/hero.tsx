@@ -57,21 +57,21 @@ export default function Hero() {
         </FadeUp>
 
         <FadeUp delay={0.54}>
-          <div className="flex items-center gap-6 mt-12">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mt-12">
             <a
               href="#work"
               className="text-sm font-medium text-ink hover:text-signal transition-colors duration-200"
             >
               View Work
             </a>
-            <span className="w-10 h-px bg-edge" aria-hidden="true" />
+            <span className="hidden sm:block w-10 h-px bg-edge" aria-hidden="true" />
             <a
               href="#contact"
               className="text-sm text-ink-muted hover:text-ink transition-colors duration-200"
             >
               Get in Touch
             </a>
-            <span className="w-10 h-px bg-edge" aria-hidden="true" />
+            <span className="hidden sm:block w-10 h-px bg-edge" aria-hidden="true" />
             <a
               href="/resume.pdf"
               target="_blank"

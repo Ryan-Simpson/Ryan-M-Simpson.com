@@ -57,7 +57,7 @@ export default function Contact() {
             Ryan Simpson
           </p>
           <p className="font-mono text-[10px] tracking-[0.15em] text-ink-faint">
-            {new Date().getFullYear()} — Robotics Software Engineer
+            {new Date().getFullYear()} · Robotics Software Engineer
           </p>
         </div>
       </Reveal>
