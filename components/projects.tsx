@@ -1,6 +1,7 @@
 import Reveal from "@/components/reveal";
+import { PROJECTS as PROJECT_DATA } from "@/lib/projects";
 
-interface Project {
+interface ProjectCard {
   index: string;
   domain: string;
   title: string;
@@ -9,35 +10,20 @@ interface Project {
   href: string;
 }
 
-const PROJECTS: Project[] = [
-  {
-    index: "01",
-    domain: "SLAM",
-    title: "AVL SLAM System",
-    description:
-      "Multi-sensor SLAM pipeline for an autonomous ground vehicle — fusing VLP-16 LiDAR, three ZED X stereo cameras, RealSense D455, and IMU through RTAB-Map on Jetson Orin AGX.",
-    visual: <LidarFovSVG />,
-    href: "https://github.com/changwemusonda/avl_slam",
-  },
-  {
-    index: "02",
-    domain: "LiDAR Processing",
-    title: "Velodyne VLP-16 Decoder",
-    description:
-      "Real-time UDP packet decoder reconstructing 3D point clouds at 300,000+ points per second with Open3D visualization. Initial perception stage for the AVL autonomous go-kart.",
-    visual: <CoordFrameSVG />,
-    href: "https://github.com/Ryan-Simpson/velodyne-vlp16-decoder",
-  },
-  {
-    index: "03",
-    domain: "Visualization",
-    title: "LeWitt × LiDAR",
-    description:
-      "Four generative visualization modes that transform live Velodyne point cloud data into art through rules borrowed from Sol LeWitt's Wall Drawings — written for an art history final.",
-    visual: <PathTraceSVG />,
-    href: "https://github.com/Ryan-Simpson/lewitt-lidar",
-  },
-];
+const VISUALS: Record<string, React.ReactNode> = {
+  "avl-slam": <LidarFovSVG />,
+  "velodyne-vlp16-decoder": <CoordFrameSVG />,
+  "lewitt-lidar": <PathTraceSVG />,
+};
+
+const PROJECTS: ProjectCard[] = PROJECT_DATA.map((p) => ({
+  index: p.index,
+  domain: p.domain,
+  title: p.title,
+  description: p.description,
+  visual: VISUALS[p.slug],
+  href: `/projects/${p.slug}`,
+}));
 
 export default function Projects() {
   return (
@@ -86,7 +72,7 @@ function ProjectCard({
   project,
   size,
 }: {
-  project: Project;
+  project: ProjectCard;
   size: "primary" | "secondary";
 }) {
   return (
